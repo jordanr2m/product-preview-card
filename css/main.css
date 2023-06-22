@@ -1,0 +1,113 @@
+/* -------- GLOBAL STYLES - MOBILE FIRST DESIGN -------*/
+html,
+body {
+    margin: 0;
+    height: 100%;
+    font-size: 16px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: .875em;
+    text-align: left;
+    color: hsl(228, 12%, 48%);
+    background-color: hsl(30, 38%, 92%);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 375px;
+    width: 90%;
+    /** Use max-width and width properties together to make sure the child elements don't overflow the parent container **/
+    border-radius: 10px;
+    overflow: hidden;
+    /** You must add the overflow: hidden property here in order to see the rounded border edges **/
+}
+
+h1,
+h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 2.25em;
+}
+
+h1 {
+    color: hsl(212, 21%, 14%);
+    line-height: 1em;
+    margin-top: 10px;
+}
+
+h2 {
+    color: hsl(158, 36%, 37%);
+}
+
+p {
+	font-size: 0.875em;
+    line-height: 1.75em;
+    margin: 0;
+}
+
+
+/******* Other Styles *****/
+img {
+    max-height: 240px;
+    /** Without adding a max-height, the image will appear full size. I guessed at the px measurement for this based on the design doc **/
+    /** object-fit: cover; works the same for <img> as background-size: cover; does for divs with background images **/
+}
+
+.text {
+    background-color: hsl(0, 0%, 100%);
+    padding: 25px;
+}
+
+.perfume {
+    font-weight: lighter;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+.prices {
+    display: flex;
+    align-items: center;
+    margin-bottom: -10px;
+}
+
+.discount {
+    margin-left: 20px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    padding: 15px 85px;
+    background-color:hsl(158, 36%, 37%);
+    border: none;
+    font-weight: bold;
+    font-size: 1em;
+    font-family: 'Montserrat', sans-serif;
+    color: hsl(0, 0%, 100%);
+    border-radius: 8px;
+}
+
+button:hover {
+    background-color: darkslategrey;
+    transition: 0.7s;
+}
+
+.button img {
+    margin-right: 10px;
+}
