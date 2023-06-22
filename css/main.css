@@ -59,9 +59,12 @@ p {
 
 
 /******* Other Styles *****/
-img {
-    max-height: 240px;
-    /** Without adding a max-height, the image will appear full size. I guessed at the px measurement for this based on the design doc **/
+.image {
+    background-image: url("../images/image-product-mobile.jpg");
+    background-size: cover;
+    width: 375px;
+    height: 240px;
+    /** Without adding a specified width and height, the image will not render at all. I guessed at the px measurements for this based on the design doc. **/
     /** object-fit: cover; works the same for <img> as background-size: cover; does for divs with background images **/
 }
 
