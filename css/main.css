@@ -12,7 +12,6 @@ body {
     align-items: center;
     font-family: 'Montserrat', sans-serif;
     font-size: .875em;
-    text-align: left;
     color: hsl(228, 12%, 48%);
     background-color: hsl(30, 38%, 92%);
 }
@@ -25,11 +24,10 @@ main {
 .content-wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     max-width: 375px;
     width: 90%;
-    /** Use max-width and width properties together to make sure the child elements don't overflow the parent container **/
+    /** Use max-width and width properties together to make sure the child elements don't overflow the parent container (max-width) and give space on each side of the parent container (width) **/
     border-radius: 10px;
     overflow: hidden;
     /** You must add the overflow: hidden property here in order to see the rounded border edges **/
@@ -64,7 +62,7 @@ p {
     background-size: cover;
     width: 375px;
     height: 240px;
-    /** Without adding a specified width and height, the image will not render at all. I guessed at the px measurements for this based on the design doc. **/
+    /** Without adding a specified width and height, the image will not render at all. I guessed at the px measurements for this based on the design doc. The image will not render if you assign either width or height the value of auto. It works with width 100% but not when height is set to 100% **/
     /** object-fit: cover; works the same for <img> as background-size: cover; does for divs with background images **/
 }
 
@@ -114,3 +112,41 @@ button:hover {
 .button img {
     margin-right: 10px;
 }
+
+
+/* ------ MEDIA QUERIES ----- */
+/* Tablet and Desktop Design */
+@media all and (min-width: 768px) {
+    .content-wrapper {
+        flex-flow: row wrap;
+        max-width: 600px;
+        border-radius: 10px;
+        overflow: hidden;
+        /** You must add the overflow: hidden property here in order to see the rounded border edges **/
+    }
+    
+    .image,
+    .text {
+        box-sizing: border-box;
+        width: 50%;
+        /** Add the width of each section here using the width property rather than flex-basis. Include the box-sizing property so that one conatiner isn't larger than the other after padding is added **/
+    }
+    
+    .image {
+        background: url('../images/image-product-desktop.jpg') no-repeat;
+        background-size: cover;
+        height: 100%;
+        /** Add background-size: cover to make the image display full size inside of its container. Add height: 100% to automatically adjust height of img to fit div. This property did not work on mobile layout for some reason. **/
+    }
+
+    .text-wrapper {
+        margin: 10px;
+    }
+
+    h1 {
+        margin-top: 20px;
+    }
+
+    button {
+        padding: 15px 50px;
+    }
